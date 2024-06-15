@@ -1,0 +1,217 @@
+*{
+    transition: all 0.5s;
+    font-family: "Chewy", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background: #E7D37F;
+      
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
+.header__titulo{
+    font-size: 50px;
+    font-weight: 800;
+}
+.puntajes{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 5rem 0 5rem;
+}
+.puntajes__intentos, .puntajes__aciertos{
+    font-size: 20px;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+.contenedor__elemento, .contenedor__elemento--area, .contenedor__elemento--imagen, .contenedor__elemento--posterior{
+    width: 200px;
+    min-width: 80px;
+    height: 200px;
+}
+.contenedor{
+    display: grid;
+    grid-template-columns: repeat(4,2fr);
+    justify-content: center;
+    gap: 2rem;
+}
+.contenedor__area{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width: 1000px) {
+    .contenedor{
+        grid-template-columns: repeat(3,2fr);
+    }
+}
+@media (max-width: 770px) {
+    .contenedor{
+        padding: 0;
+        grid-template-columns: repeat(2,2fr);
+    }
+}
+@media (max-width: 550px) {
+    .header__titulo{
+        margin: 0;
+    }
+    .puntajes{
+        padding: 0 5rem 0 5rem;
+    }
+    .contenedor__elemento, .contenedor__elemento--area, .contenedor__elemento--imagen, .contenedor__elemento--posterior{
+        width: 125px;
+        min-width: 80px;
+        height: 100px;
+    }
+}
+.contenedor__elemento{
+    position: relative;
+    transform-style: preserve-3d;
+    animation: iniciar 3s;
+}
+.contenedor__area:hover{
+    cursor: pointer;
+}
+.elemento{
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 50px;
+}
+.contenedor__elemento--imagen{
+    transform: rotateY(180deg);
+    border: 5px solid #FCFFFE;
+}
+.contenedor__elemento--posterior{
+    background-color: #365E32;
+    border: 5px solid black;
+    &:hover{
+        background-color: #81A263;
+    }
+}
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    background-color: #111111bd;
+    opacity: 0;
+    pointer-events: none;
+}
+.modal__contenedor{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+}
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+}
+.modal__contenedor--titulo{
+    font-size: 35px;
+    text-align: center;
+}
+.modal__contenedor--informacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal__contenedor--imagen{
+    max-height: 350px;
+    width: 60%;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+}
+.modal__contenedor--nombre{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 20px;
+}
+.modal__contenedor--descripcion{
+    padding: 0 1rem 0 1rem;
+}
+.modal__contenedor--boton{
+    width: 30%;
+    padding: 2px 1px 2px 1px;
+    font-size: 15px;
+    border-radius: 4px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.ganaste{
+    color: green;
+}
+.perdiste{
+    color: red;
+}
+.ganaste__boton{
+    background-color: green;
+    &:hover{
+        cursor: pointer;
+        background-color: greenyellow;
+    }
+}
+.perdiste__boton{
+    background-color: red;
+    &:hover{
+        cursor: pointer;
+        background-color: orangered;
+    }
+}
+.empezar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.empezar__contenedor{
+    padding: 5rem;
+}
+.empezar__boton{
+    padding: 1rem;
+    font-size: 25px;
+    background-color:  #81A263;
+    border: none;
+    width: 30%;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    &:hover{
+        cursor: pointer;
+        background-color: #365E32;
+        color: white;
+        -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgb(255, 255, 255); 
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgb(255, 255, 255);
+    }
+}
+.bloquear{
+    opacity: 0;
+    pointer-events: none;
+    height: 1px;
+}
+
+
+
+@keyframes iniciar {
+    10%, 90%{
+        transform: rotateY(180deg);
+    }
+    0%, 100%{
+        transform: rotateY(0deg);
+    }
+}

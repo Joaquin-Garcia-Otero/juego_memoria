@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+    <title>Juego de memoria</title>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__titulo">Juego de memoria</h1>
+    </header>
+    <div class="puntajes">
+        <div class="puntajes__intentos">
+            <p>Intentos:</p>
+            <p>0/3</p>
+        </div>
+        <div class="puntajes__aciertos">
+            <p>Aciertos:</p>
+            <p>0</p>
+        </div>
+    </div>
+    <main class="contenedor"></main>
+    
+    <div class="empezar">
+        <div class="empezar__contenedor">
+            <p>
+                ¡Bienvenidos al emocionante juego de memoria educativa "Conocer Vida"!
+                En este desafío, nos embarcaremos en una misión para proteger a los animales en peligro de extinción de nuestro planeta. Nuestro objetivo es encontrar las parejas de cada uno de estos increíbles animales antes de que se nos acaben los intentos.
+            </p>
+                <ul class="reglas">
+                    <p>Reglas del Juego:</p>
+                    <li>En el tablero, se encuentran ocultas las imágenes de animales en peligro de extinción.</li>
+                    <li>Tu misión es encontrar la pareja de cada animal.</li>
+                    <li>Solo tienes tres intentos para completar el desafío.</li>
+                    <li>Haz clic en dos cartas para voltearlas y ver si forman una pareja.</li>
+                    <li>Si las cartas no coinciden, se voltearán nuevamente y perderás un intento.</li>
+                    <li>El juego termina cuando hayas encontrado todas las parejas o hayas agotado los tres intentos.</li>
+                </ul>
+            <p>
+                ¡Prepárate para poner a prueba tu memoria y aprender sobre estas maravillosas criaturas que necesitan nuestra ayuda! ¿Estás listo para convertirte en un verdadero guardián de la fauna? ¡Buena suerte!
+            </p>
+        </div>
+        <button class="empezar__boton" onClick="empezarJuego()" >Empezar el Juego</button>
+    </div>
+      
+    <div class="modal">
+        <div class="modal__contenedor">
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
